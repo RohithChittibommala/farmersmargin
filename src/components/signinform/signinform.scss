@@ -1,0 +1,20 @@
+#signinform {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.input {
+  width: 70vw !important;
+}
+
+.button-group {
+  width: 70vw !important;
+}
+
+#signin-button {
+  margin-left: 2em !important;
+}

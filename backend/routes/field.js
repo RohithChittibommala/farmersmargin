@@ -1,8 +1,17 @@
-const express = require('express');
-const router = express.Router();
-const {getFields, addField} = require('../controllers/field');
+// const express = require("express");
+// const router = express.Router();
+// const { getFields, addField } = require("../models/field");
 
-router.route('/').post(addField);
-router.route('/:lon/:lat').get(getFields);
+// router.route("/").post(addField);
+// router.route("/:lon/:lat").get(getFields);
+
+// module.exports = router;
+
+const express = require("express");
+const router = express.Router();
+const { getFields, addField } = require("../controllers/field");
+
+router.route("/").post(addField);
+router.route("/:lon/:lat").get(getFields);
 
 module.exports = router;

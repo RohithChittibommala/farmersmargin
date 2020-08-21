@@ -18,7 +18,7 @@ exports.getFields = async (req, res, next) => {
         },
       },
       { $skip: 0 },
-      { $limit: 2 },
+      { $limit: 20 },
     ]);
     return res.status(200).send({
       success: true,
@@ -34,9 +34,10 @@ exports.getFields = async (req, res, next) => {
 };
 
 exports.addField = async (req, res, next) => {
-  console.log(req.body.location.coordinates);
+  console.log(req.body);
   try {
     const field = await Fields.create(req.body);
+    console.log("data added");
     return res.status(200).send({
       sucess: true,
       data: field,

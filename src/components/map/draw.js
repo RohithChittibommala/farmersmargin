@@ -4,6 +4,7 @@ import { addField } from "./addField";
 import { getGeoPoints } from "./addField";
 
 export default function draw(map, editableLayers) {
+  console.log("draw");
   var drawPluginOptions = {
     position: "bottomright",
     draw: {
@@ -30,8 +31,9 @@ export default function draw(map, editableLayers) {
   };
 
   var drawControl = new L.Control.Draw(drawPluginOptions);
-  map.addControl(drawControl);
-
+  // map.addControl(drawControl);
+  var polygonDrawer = new L.Draw.Polyline(map);
+  polygonDrawer.enable();
   map.on("draw:created", function (e) {
     var type = e.layerType,
       layer = e.layer;
@@ -46,6 +48,8 @@ export default function draw(map, editableLayers) {
       },
       color: "yellow",
       crop: "paddy",
+      farm: "dhanasekar farms",
+      username: "dhanasekar",
     };
     editableLayers.addLayer(layer);
     addField(data);

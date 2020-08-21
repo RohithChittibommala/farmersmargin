@@ -17,7 +17,7 @@ app.use(CORS());
 
 // //getQueries
 // app.use("/farms", require("./routes/farm.js"));
-// app.use("/fields", require("./routes/field.js"));
+app.use("/fields", require("./routes/field.js"));
 
 app.listen(process.env.PORT, () =>
   console.log(`Server running on port ${process.env.PORT}`)
